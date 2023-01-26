@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background: #09090a;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+
+.header {
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 48px;
+  position: fixed;
+  background-color: black;
+  z-index: 9;
+}
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 12rem 0 0.2rem;
+}
+
+.register button {
+  border: 2px solid #8b5cf6;
+  border-radius: 8px;
+  padding: 16px 24px;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  padding: 200px 3rem 3rem;
+  width: fit-content;
+}
+
+.habits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1.6rem;
+  z-index: 7;
+}
+
+.habits .habit {
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.2rem;
+  width: 4rem;
+}
+
+.habit[data-name="school"] {
+  color: #06a106;
+}
+
+.habit[data-name="study"] {
+  color: #ad0808;
+}
+
+.habit[data-name="food"] {
+  color: #dac581;
+}
+
+.habit[data-name="list"] {
+  color: #9e9999;
+}
+
+.school,
+.study,
+.food,
+.sleep,
+.animal,
+.list {
+  position: relative;
+}
+
+.school::after,
+.study::after,
+.food::after,
+.list::after {
+  font-size: 0.6rem;
+  display: block;
+  position: absolute;
+  bottom: -1.3rem;
+  left: -0.5rem;
+  border-radius: 4px;
+  background-color: #1c1f26;
+  color: white;
+  height: 2vh;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.school::after {
+  content: "Escola";
+}
+
+.study::after {
+  content: "Estudo";
+}
+
+.food::after {
+  content: "Comer";
+}
+
+.sleep::after {
+  content: "DORMIR";
+  font-size: 0.7rem;
+  display: block;
+  position: absolute;
+  bottom: -0.7rem;
+  border-radius: 4px;
+  background-color: #1c1f26;
+  color: white;
+  height: 2vh;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.animal::after {
+  content: "PRIQUITO";
+  font-size: 0.7rem;
+  display: block;
+  position: absolute;
+  bottom: -0.7rem;
+  border-radius: 4px;
+  background-color: #1c1f26;
+  color: white;
+  height: 2vh;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.list::after {
+  content: "Tarefas";
+}
+
+.school:hover::after {
+  opacity: 1;
+}
+.study:hover::after {
+  opacity: 1;
+}
+.food:hover::after {
+  opacity: 1;
+}
+.animal:hover::after {
+  opacity: 1;
+}
+.list:hover::after {
+  opacity: 1;
+}
+.sleep:hover::after {
+  opacity: 1;
+}
+
+.days {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-left: 1rem;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.day input {
+  height: 4rem;
+  width: 4rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #18181b;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input:checked {
+  background-color: #8b5cf6;
+}
+
+@media (max-width: 570px) {
+  button div {
+    display: none;
+  }
+
+  .register button {
+    position: absolute;
+    right: 4rem;
+  }
+}
